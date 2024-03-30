@@ -8,11 +8,11 @@ Welcome to KaTeXRendr, a real-time, browser-based MathTeX renderer designed to m
 - **Browser-Based**: No need to install anything, just open and start using.
 - **KaTeX Integration**: Utilizes the fast rendering of KaTeX for high-quality typesetting.
 - **User-Friendly Interface**: Simple and intuitive design for all user levels.
-#- **Responsive Design**: Works seamlessly on various devices and screen sizes.
+<!--- - **Responsive Design**: Works seamlessly on various devices and screen sizes. --->
 
 ## Getting Started
 
-Symply open KaTeXRendr from this link: [https://katexrendr.poisonfox.cf](https://katexrendr.poisonfox.cf) or clone the repository and open the `index.html` file in your browser.
+Symply open KaTeXRendr from this link: [https://katexrendr.poisonfox.cf](https://katexrendr.poisonfox.cf) or clone the repository and open the [`index.html`](https://github.com/foxypiratecove37350/KaTeXRendr/blob/main/index.html) file in your browser.
 
 ## Usage
 
@@ -24,7 +24,7 @@ Contributions are welcome! If you'd like to improve KaTeXRendr, fork this reposi
 
 ## License
 
-KaTeXRendr is open-source software licensed under the GNU General Public License V2.0. See the LICENSE file for more details.
+KaTeXRendr is open-source software licensed under the GNU General Public License V2.0. See the [`LICENSE`](https://github.com/foxypiratecove37350/KaTeXRendr/blob/main/LICENSE) file for more details.
 
 ## Support
 
