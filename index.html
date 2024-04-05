@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<!-- Metas -->
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<!-- SEO -->
+		<title>KaTeXRendr | A real-time browser-based MathTeX renderer using KaTeX.</title>
+		<meta name="generator" content="Jekyll v3.9.5" />
+		<meta property="og:title" content="KaTeXRendr" />
+		<meta property="og:locale" content="en_US" />
+		<meta name="description" content="A real-time browser-based MathTeX renderer using KaTeX." />
+		<meta property="og:description" content="A real-time browser-based MathTeX renderer using KaTeX." />
+		<link rel="canonical" href="https://katexrendr.poisonfox.cf/" />
+		<meta property="og:url" content="https://katexrendr.poisonfox.cf/" />
+		<meta property="og:site_name" content="KaTeXRendr" />
+		<meta property="og:type" content="website" />
+		<meta name="twitter:card" content="summary" />
+		<meta property="twitter:title" content="KaTeXRendr" />
+		<script type="application/ld+json">
+			{
+				"@context":"https://schema.org",
+				"@type":"WebSite",
+				"description":"A real-time browser-based MathTeX renderer using KaTeX.",
+				"headline":"KaTeXRendr",
+				"name":"KaTeXRendr",
+				"url":"https://katexrendr.poisonfox.cf/"
+			}
+		</script>
+		<!-- Links -->
+		<link rel="stylesheet" href="./styles/style.css">
+		<link rel="icon" href="./images/icons-logos/icon.png">
+		<!-- KaTeX -->
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.css" integrity="sha384-wcIxkf4k558AjM3Yz3BBFQUbk/zgIYC2R0QpeeYb+TwlBVMrlgLqwRjRtGZiK7ww" crossorigin="anonymous">
+		<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.js" integrity="sha384-hIoBPJpTUs74ddyc4bFZSM1TVlQDA60VBbJS0oA934VSz82sBx1X7kSx2ATBDIyd" crossorigin="anonymous"></script>
+		<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/contrib/auto-render.min.js" integrity="sha384-43gviWU0YVjaDtb/GhzOouOXtZMP/7XUzwPTstBeZFe/+rCMvRwr4yROQP43s0Xk" crossorigin="anonymous"></script>
+	</head>
+	<body>
+		<div class="button-bar">
+			<button type="button" class="copy-tex-code">Copy TeX code</button>
+			<div class="select delimiters">
+				<div>
+					<div tabindex="1" class="default">Delimiters</div>
+					<div tabindex="1" data-delimiters="$$ $$" class="option">$$ and $$</div>
+					<div tabindex="1" data-delimiters="$ $" class="option">$ and $</div>
+					<div tabindex="1" data-delimiters="\[ \]" class="option">\[ and \]</div>
+					<div tabindex="1" data-delimiters="\( \)" class="option">\( and \)</div>
+					<!-- <div tabindex="1" class="option">Custom</div> --> <!-- TODO -->
+				</div>
+			</div>
+		</div>
+		<textarea placeholder="Type you MathTex expression here..." class="katex-textarea"></textarea>
+		<div class="katex-output"></div>
+		<script src="./javascript/select.js" type="text/javascript"></script>
+		<script src="./javascript/real-time-rendering.js" type="text/javascript"></script>
+	</body>
+</html>
