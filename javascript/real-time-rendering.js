@@ -102,4 +102,4 @@ copyTeXButton.addEventListener('click', (e) => {
 	navigator.clipboard.writeText(texValue);
 });
 
-render();
+document.addEventListener('loaded', (e) => { render(); });
