@@ -103,17 +103,19 @@ copyTeXButton.addEventListener('click', (e) => {
 });
 
 kaTeXTextarea.addEventListener('copy', (e) => {
-	e.preventDefault();
-	
-	let texValue;
+	if (kaTeXTextarea.selectionStart === 0 && kaTeXTextarea.selectionEnd === kaTeXTextarea.value.length) {
+		e.preventDefault();
 
-	if (selectedDelimiter) {
-		texValue = makeTeXCode(kaTeXTextarea.value, selectedDelimiter.dataset.delimiters.split(' '));
-	} else {
-		texValue = makeTeXCode(kaTeXTextarea.value);
+		let texValue;
+
+		if (selectedDelimiter) {
+			texValue = makeTeXCode(kaTeXTextarea.value, selectedDelimiter.dataset.delimiters.split(' '));
+		} else {
+			texValue = makeTeXCode(kaTeXTextarea.value);
+		}
+
+		navigator.clipboard.writeText(texValue);
 	}
-
-	navigator.clipboard.writeText(texValue);
 });
 
 document.addEventListener('loaded', (e) => { render(); });
