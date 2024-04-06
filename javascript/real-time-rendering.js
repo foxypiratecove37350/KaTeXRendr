@@ -28,18 +28,18 @@ const makeTeXCode = (texCode, delimiters = ['\\[', '\\]']) => {
 	const texValue =
 		`${delimiters[0]}\n` +
 		`% Made using KaTeXRendr, a real-time browser-based MathTeX renderer using KaTeX. https://katexrendr.poisonfox.cf\n` +
-		`\\newcommand{\\card}[1]{\\mathrm{Card}\\left(\\mathbb{#1}\\right)}\n` +
-		`\\newcommand{\\anglename}[1]{\\mathrm{\\widehat{#1}}}\n` +
+		`\\newcommand{\\card}[1]{\\operatorname{Card}\\left(\\mathbb{#1}\\right)}\n` +
+		`\\newcommand{\\anglename}[1]{\\operatorname{\\widehat{#1}}}\n` +
 		`\\newcommand{\\defaultcolor}[1]{\\color{${defaultColorHex}}{#1}}\n` +
 		`\\newcommand{\\KaTeXRendr}{\\KaTeX\\text{Rendr}}\n` +
 		`\\newcommand{\\undefined}{\\text{Undefined}}\n` +
 		`\\newcommand{\\nullchar}{\u00AD}\n` +
 		`\\newcommand{\\comment}[1]{\\quad\\gray{\\left(\\text{#1}\\right)}}\n` +
 		`\\newcommand{\\conclude}{\\quad\\blacksquare}\n` +
-		`\\renewcommand{\\sin}[1]{\\mathrm{ sin}\\left(#1\\right)}\n` +
-		`\\renewcommand{\\cos}[1]{\\mathrm{ cos}\\left(#1\\right)}\n` +
-		`\\renewcommand{\\tan}[1]{\\mathrm{ tan}\\left(#1\\right)}\n` +
-		`\\renewcommand{\\csc}[1]{\\mathrm{ csc}\\left(#1\\right)}\n` +
+		`\\renewcommand{\\sin}[1]{\\operatorname{sin}\\left(#1\\right)}\n` +
+		`\\renewcommand{\\cos}[1]{\\operatorname{cos}\\left(#1\\right)}\n` +
+		`\\renewcommand{\\tan}[1]{\\operatorname{tan}\\left(#1\\right)}\n` +
+		`\\renewcommand{\\csc}[1]{\\operatorname{csc}\\left(#1\\right)}\n` +
 		(condition ? '' : `\\begin{align*}\n`) +
 		`${value}\n` +
 		(condition ? '' : `\\end{align*}\n`) +
