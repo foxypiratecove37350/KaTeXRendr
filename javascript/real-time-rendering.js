@@ -5,7 +5,7 @@ const copyTeXButton = document.querySelector('.copy-tex-code');
 const makeTeXCode = (texCode, delimiters = ['\\[', '\\]']) => {
 	const value = texCode
 		.trim()
-		.replaceAll('\n', ' \\\\\n ')
+		.replaceAll('\n', ' \\\\\n')
 		.replaceAll('$', ' \\$ ')
 		.replaceAll('(', ' \\left( ')
 		.replaceAll(')', ' \\right) ')
@@ -91,6 +91,20 @@ kaTeXTextarea.addEventListener('input', (e) => {
 });
 
 copyTeXButton.addEventListener('click', (e) => {
+	let texValue;
+
+	if (selectedDelimiter) {
+		texValue = makeTeXCode(kaTeXTextarea.value, selectedDelimiter.dataset.delimiters.split(' '));
+	} else {
+		texValue = makeTeXCode(kaTeXTextarea.value);
+	}
+
+	navigator.clipboard.writeText(texValue);
+});
+
+kaTeXTextarea.addEventListener('copy', (e) => {
+	e.preventDefault();
+	
 	let texValue;
 
 	if (selectedDelimiter) {
