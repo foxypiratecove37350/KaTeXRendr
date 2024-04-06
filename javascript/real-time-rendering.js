@@ -29,7 +29,7 @@ const makeTeXCode = (texCode, delimiters = ['\\[', '\\]']) => {
 		`${delimiters[0]}\n` +
 		`% Made using KaTeXRendr, a real-time browser-based MathTeX renderer using KaTeX. https://katexrendr.poisonfox.cf\n` +
 		`\\newcommand{\\card}[1]{\\operatorname{Card}\\left(\\mathbb{#1}\\right)}\n` +
-		`\\newcommand{\\anglename}[1]{\\operatorname{\\widehat{#1}}}\n` +
+		`\\newcommand{\\anglename}[1]{\\widehat{#1}}\n` +
 		`\\newcommand{\\defaultcolor}[1]{\\color{${defaultColorHex}}{#1}}\n` +
 		`\\newcommand{\\KaTeXRendr}{\\KaTeX\\text{Rendr}}\n` +
 		`\\newcommand{\\undefined}{\\text{Undefined}}\n` +
@@ -101,3 +101,5 @@ copyTeXButton.addEventListener('click', (e) => {
 
 	navigator.clipboard.writeText(texValue);
 });
+
+render();
