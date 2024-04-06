@@ -5,10 +5,12 @@ const copyTeXButton = document.querySelector('.copy-tex-code');
 const makeTeXCode = (texCode, delimiters = ['\\[', '\\]']) => {
 	const value = texCode
 		.trim()
-		.replaceAll('\n', ' \\\\\n')
-		.replaceAll('$', '\\$')
-		.replaceAll('(', '\\left(')
-		.replaceAll(')', '\\right)');
+		.replaceAll('\n', ' \\\\\n ')
+		.replaceAll('$', ' \\$ ')
+		.replaceAll('(', ' \\left( ')
+		.replaceAll(')', ' \\right) ')
+		.replaceAll('\\[', ' [ ')
+		.replaceAll('\\]', ' ] ');
 	let defaultColorHex = '';
 	const defaultColor = window.getComputedStyle(kaTeXOutput)
 		.color
@@ -23,7 +25,7 @@ const makeTeXCode = (texCode, delimiters = ['\\[', '\\]']) => {
 		`${delimiters[0]}\n` +
 		`% Made using KaTeXRendr, a real-time browser-based MathTeX renderer using KaTeX. https://katexrendr.poisonfox.cf\n` +
 		`\\newcommand{\\card}[1]{\\mathrm{Card}(\\mathbb{#1})}\n` +
-		`\\newcommand{\\anglename}[1]{\\mathrm{\\^{#1}}}\n` +
+		`\\newcommand{\\anglename}[1]{\\mathrm{\\widehat{#1}}}\n` +
 		`\\newcommand{\\defaultcolor}[1]{\\color{${defaultColorHex}}{#1}}\n` +
 		`\\newcommand{\\KaTeXRendr}{\\KaTeX\\text{Rendr}}\n` +
 		`\\newcommand{\\undefined}{\\text{Undefined}}\n` +
