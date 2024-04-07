@@ -54,8 +54,8 @@ const makeTeXCode = (texCode, delimiters = ['\\[', '\\]']) => {
 		`\\newcommand{\\arccsc}[1]{\\operatorname{Arccsc}\\left(#1\\right)}\n` +
 		`\\newcommand{\\arcsec}[1]{\\operatorname{Arcsec}\\left(#1\\right)}\n` +
 		`\\newcommand{\\arccot}[1]{\\operatorname{Arccot}\\left(#1\\right)}\n` +
-		`\\renewcommand{\\Im}[1]{\u211c\\mathfrak{e}\\left(#1\\right)}\n` +
-		`\\renewcommand{\\Re}[1]{\u2111\\mathfrak{m}\\left(#1\\right)}\n` +
+		`\\renewcommand{\\Re}[1]{\u211c\\mathfrak{e}\\left(#1\\right)}\n` +
+		`\\renewcommand{\\Im}[1]{\u2111\\mathfrak{m}\\left(#1\\right)}\n` +
 		"\\renewcommand{\\log}{\\@ifnextchar_{\\log@sub}{\\log@nosub}}\n" +
 		"\\newcommand{\\log@nosub}[1]{\\operatorname{log}\\left(#1\\right)}\n" +
 		"\\newcommand{\\log@sub}[3]{\\operatorname{log}_{#2}\\left(#3\\right)}\n" +
@@ -71,6 +71,7 @@ const makeTeXCode = (texCode, delimiters = ['\\[', '\\]']) => {
 		"\\newcommand{\\mode}[1]{\\operatorname{mode}\\left(\\mathbb{#1}\\right)}\n" +
 		"\\newcommand{\\e}{\\mathrm{e}}\n" +
 		"\\newcommand{\\iu}{\\mathrm{i}}\n" +
+		"\\newcommand{\\dspace}{~~}\n" +
 		(condition ? '' : `\\begin{align*}\n`) +
 		`${value}\n` +
 		(condition ? '' : `\\end{align*}\n`) +
