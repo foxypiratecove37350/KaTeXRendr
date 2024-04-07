@@ -65,8 +65,8 @@ const makeTeXCode = (texCode, delimiters = ['\\[', '\\]']) => {
 		`\\renewcommand{\\ln}[1]{\\operatorname{ln}\\left(#1\\right)}\n` +
 		"\\newcommand{\\lcm}[2]{\\operatorname{lcm}\\left(#1;#2\\right)}\n" +
 		"\\newcommand{\\gcf}[2]{\\operatorname{gcf}\\left(#1;#2\\right)}\n" +
-		"\\newcommand{\\max}[2]{\\operatorname{max}\\left(#1;#2\\right)}\n" +
-		"\\newcommand{\\min}[2]{\\operatorname{min}\\left(#1;#2\\right)}\n" +
+		"\\renewcommand{\\max}[2]{\\operatorname{max}\\left(#1;#2\\right)}\n" +
+		"\\renewcommand{\\min}[2]{\\operatorname{min}\\left(#1;#2\\right)}\n" +
 		"\\newcommand{\\mean}[2]{\\operatorname{mean}\\left(#1;#2\\right)}\n" +
 		"\\newcommand{\\mode}[1]{\\operatorname{mode}\\left(\\mathbb{#1}\\right)}\n" +
 		(condition ? '' : `\\begin{align*}\n`) +
