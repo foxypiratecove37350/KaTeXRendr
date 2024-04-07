@@ -56,16 +56,12 @@ const makeTeXCode = (texCode, delimiters = ['\\[', '\\]']) => {
 		`\\newcommand{\\arccot}[1]{\\operatorname{Arccot}\\left(#1\\right)}\n` +
 		`\\renewcommand{\\Im}[1]{\\\u211c\\mathfrak{e}\\left(#1\\right)}\n` +
 		`\\renewcommand{\\Re}[1]{\\\u2111\\mathfrak{m}\\left(#1\\right)}\n` +
-		"\\makeatletter\n" +
 		"\\renewcommand{\\log}{\\@ifnextchar_{\\log@sub}{\\log@nosub}}\n" +
 		"\\newcommand{\\log@nosub}[1]{\\operatorname{log}\\left(#1\\right)}\n" +
 		"\\newcommand{\\log@sub}[3]{\\operatorname{log}_{#2}\\left(#3\\right)}\n" +
-		"\\makeatother\n" +
-		"\\makeatletter\n" +
 		"\\renewcommand{\\lim}{\\@ifnextchar_{\\lim@sub}{\\lim@nosub}}\n" +
 		"\\newcommand{\\lim@nosub}{\\operatorname{lim}}\n" +
 		"\\newcommand{\\lim@sub}[3]{\\underset{{#2}}{\\operatorname{lim}}\\left(#3\\right)}\n" +
-		"\\makeatother\n" +
 		`\\renewcommand{\\ln}[1]{\\operatorname{ln}\\left(#1\\right)}\n` +
 		"\\newcommand{\\lcm}[2]{\\operatorname{lcm}\\left(#1;#2\\right)}\n" +
 		"\\newcommand{\\gcf}[2]{\\operatorname{gcf}\\left(#1;#2\\right)}\n" +
