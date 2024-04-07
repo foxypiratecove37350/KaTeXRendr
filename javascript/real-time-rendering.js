@@ -40,6 +40,39 @@ const makeTeXCode = (texCode, delimiters = ['\\[', '\\]']) => {
 		`\\renewcommand{\\cos}[1]{\\operatorname{cos}\\left(#1\\right)}\n` +
 		`\\renewcommand{\\tan}[1]{\\operatorname{tan}\\left(#1\\right)}\n` +
 		`\\renewcommand{\\csc}[1]{\\operatorname{csc}\\left(#1\\right)}\n` +
+		`\\renewcommand{\\sec}[1]{\\operatorname{sec}\\left(#1\\right)}\n` +
+		`\\renewcommand{\\cot}[1]{\\operatorname{cot}\\left(#1\\right)}\n` +
+		`\\renewcommand{\\sinh}[1]{\\operatorname{sinh}\\left(#1\\right)}\n` +
+		`\\renewcommand{\\cosh}[1]{\\operatorname{cosh}\\left(#1\\right)}\n` +
+		`\\renewcommand{\\tanh}[1]{\\operatorname{tanh}\\left(#1\\right)}\n` +
+		`\\renewcommand{\\csch}[1]{\\operatorname{csch}\\left(#1\\right)}\n` +
+		`\\renewcommand{\\sech}[1]{\\operatorname{sech}\\left(#1\\right)}\n` +
+		`\\renewcommand{\\coth}[1]{\\operatorname{coth}\\left(#1\\right)}\n` +
+		`\\renewcommand{\\arcsin}[1]{\\operatorname{Arcsin}\\left(#1\\right)}\n` +
+		`\\renewcommand{\\arccos}[1]{\\operatorname{Arccos}\\left(#1\\right)}\n` +
+		`\\renewcommand{\\arctan}[1]{\\operatorname{Arctan}\\left(#1\\right)}\n` +
+		`\\renewcommand{\\arccsc}[1]{\\operatorname{Arccsc}\\left(#1\\right)}\n` +
+		`\\renewcommand{\\arcsec}[1]{\\operatorname{Arcsec}\\left(#1\\right)}\n` +
+		`\\renewcommand{\\arccot}[1]{\\operatorname{Arccot}\\left(#1\\right)}\n` +
+		`\\renewcommand{\\Im}[1]{\\\u211c\\mathfrak{e}\\left(#1\\right)}\n` +
+		`\\renewcommand{\\Re}[1]{\\\u2111\\mathfrak{m}\\left(#1\\right)}\n` +
+		"\\makeatletter\n" +
+		"\\renewcommand{\\log}{\\@ifnextchar_{\\log@sub}{\\log@nosub}}\n" +
+		"\\newcommand{\\log@nosub}[1]{\\operatorname{log}\\left(#1\\right)}\n" +
+		"\\newcommand{\\log@sub}[3]{\\operatorname{log}_{#2}\\left(#3\\right)}\n" +
+		"\\makeatother\n" +
+		"\\makeatletter\n" +
+		"\\renewcommand{\\lim}{\\@ifnextchar_{\\lim@sub}{\\lim@nosub}}\n" +
+		"\\newcommand{\\lim@nosub}{\\operatorname{lim}}\n" +
+		"\\newcommand{\\lim@sub}[3]{\\underset{{#2}}{\\operatorname{lim}}\\left(#3\\right)}\n" +
+		"\\makeatother\n" +
+		`\\renewcommand{\\ln}[1]{\\operatorname{ln}\\left(#1\\right)}\n` +
+		"\\newcommand{\\lcm}[2]{\\operatorname{lcm}\\left(#1;#2\\right)}\n" +
+		"\\newcommand{\\gcf}[2]{\\operatorname{gcf}\\left(#1;#2\\right)}\n" +
+		"\\newcommand{\\max}[2]{\\operatorname{max}\\left(#1;#2\\right)}\n" +
+		"\\newcommand{\\min}[2]{\\operatorname{min}\\left(#1;#2\\right)}\n" +
+		"\\newcommand{\\mean}[2]{\\operatorname{mean}\\left(#1;#2\\right)}\n" +
+		"\\newcommand{\\mode}[1]{\\operatorname{mode}\\left(\\mathbb{#1}\\right)}\n" +
 		(condition ? '' : `\\begin{align*}\n`) +
 		`${value}\n` +
 		(condition ? '' : `\\end{align*}\n`) +
