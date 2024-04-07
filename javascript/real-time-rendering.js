@@ -45,15 +45,15 @@ const makeTeXCode = (texCode, delimiters = ['\\[', '\\]']) => {
 		`\\renewcommand{\\sinh}[1]{\\operatorname{sinh}\\left(#1\\right)}\n` +
 		`\\renewcommand{\\cosh}[1]{\\operatorname{cosh}\\left(#1\\right)}\n` +
 		`\\renewcommand{\\tanh}[1]{\\operatorname{tanh}\\left(#1\\right)}\n` +
-		`\\renewcommand{\\csch}[1]{\\operatorname{csch}\\left(#1\\right)}\n` +
-		`\\renewcommand{\\sech}[1]{\\operatorname{sech}\\left(#1\\right)}\n` +
-		`\\renewcommand{\\coth}[1]{\\operatorname{coth}\\left(#1\\right)}\n` +
-		`\\renewcommand{\\arcsin}[1]{\\operatorname{Arcsin}\\left(#1\\right)}\n` +
-		`\\renewcommand{\\arccos}[1]{\\operatorname{Arccos}\\left(#1\\right)}\n` +
-		`\\renewcommand{\\arctan}[1]{\\operatorname{Arctan}\\left(#1\\right)}\n` +
-		`\\renewcommand{\\arccsc}[1]{\\operatorname{Arccsc}\\left(#1\\right)}\n` +
-		`\\renewcommand{\\arcsec}[1]{\\operatorname{Arcsec}\\left(#1\\right)}\n` +
-		`\\renewcommand{\\arccot}[1]{\\operatorname{Arccot}\\left(#1\\right)}\n` +
+		`\\newcommand{\\csch}[1]{\\operatorname{csch}\\left(#1\\right)}\n` +
+		`\\newcommand{\\sech}[1]{\\operatorname{sech}\\left(#1\\right)}\n` +
+		`\\newcommand{\\coth}[1]{\\operatorname{coth}\\left(#1\\right)}\n` +
+		`\\newcommand{\\arcsin}[1]{\\operatorname{Arcsin}\\left(#1\\right)}\n` +
+		`\\newcommand{\\arccos}[1]{\\operatorname{Arccos}\\left(#1\\right)}\n` +
+		`\\newcommand{\\arctan}[1]{\\operatorname{Arctan}\\left(#1\\right)}\n` +
+		`\\newcommand{\\arccsc}[1]{\\operatorname{Arccsc}\\left(#1\\right)}\n` +
+		`\\newcommand{\\arcsec}[1]{\\operatorname{Arcsec}\\left(#1\\right)}\n` +
+		`\\newcommand{\\arccot}[1]{\\operatorname{Arccot}\\left(#1\\right)}\n` +
 		`\\renewcommand{\\Im}[1]{\\\u211c\\mathfrak{e}\\left(#1\\right)}\n` +
 		`\\renewcommand{\\Re}[1]{\\\u2111\\mathfrak{m}\\left(#1\\right)}\n` +
 		"\\makeatletter\n" +
