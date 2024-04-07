@@ -47,7 +47,7 @@ const makeTeXCode = (texCode, delimiters = ['\\[', '\\]']) => {
 		`\\renewcommand{\\tanh}[1]{\\operatorname{tanh}\\left(#1\\right)}\n` +
 		`\\newcommand{\\csch}[1]{\\operatorname{csch}\\left(#1\\right)}\n` +
 		`\\newcommand{\\sech}[1]{\\operatorname{sech}\\left(#1\\right)}\n` +
-		`\\newcommand{\\coth}[1]{\\operatorname{coth}\\left(#1\\right)}\n` +
+		`\\renewcommand{\\coth}[1]{\\operatorname{coth}\\left(#1\\right)}\n` +
 		`\\newcommand{\\arcsin}[1]{\\operatorname{Arcsin}\\left(#1\\right)}\n` +
 		`\\newcommand{\\arccos}[1]{\\operatorname{Arccos}\\left(#1\\right)}\n` +
 		`\\newcommand{\\arctan}[1]{\\operatorname{Arctan}\\left(#1\\right)}\n` +
