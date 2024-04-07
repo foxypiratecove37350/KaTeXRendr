@@ -69,6 +69,8 @@ const makeTeXCode = (texCode, delimiters = ['\\[', '\\]']) => {
 		"\\renewcommand{\\min}[2]{\\operatorname{min}\\left(#1;#2\\right)}\n" +
 		"\\newcommand{\\mean}[2]{\\operatorname{mean}\\left(#1;#2\\right)}\n" +
 		"\\newcommand{\\mode}[1]{\\operatorname{mode}\\left(\\mathbb{#1}\\right)}\n" +
+		"\\newcommand{\\e}{mathrm{e}}\n" +
+		"\\newcommand{\\i}{mathrm{i}}\n" +
 		(condition ? '' : `\\begin{align*}\n`) +
 		`${value}\n` +
 		(condition ? '' : `\\end{align*}\n`) +
