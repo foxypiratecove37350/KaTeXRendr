@@ -11,8 +11,7 @@ const makeTeXCode = (texCode, delimiters = ['\\[', '\\]']) => {
 		.replaceAll(')', ' \\right) ')
 		.replaceAll('\\[', ' [ ')
 		.replaceAll('\\]', ' ] ')
-		.replaceAll('[', ' \\left[ ')
-		.replaceAll(']', ' \\right] ')
+		.replaceAll(/(?!\\[A-z]*)\[(?:.*)\]/g, ' \\left[ $1 \\right] ')
 		.replaceAll('\\{', ' \\left\\{ ')
 		.replaceAll('\\}', ' \\right\\} ');
 	let defaultColorHex = '';
