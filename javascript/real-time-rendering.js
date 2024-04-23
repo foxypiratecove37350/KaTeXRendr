@@ -11,7 +11,7 @@ const makeTeXCode = (texCode, delimiters = ['\\[', '\\]']) => {
 		.replaceAll(')', ' \\right) ')
 		.replaceAll('\\[', ' [ ')
 		.replaceAll('\\]', ' ] ')
-		.replaceAll(/(?!\\[A-z]*)\[([A-z]*)\]/g, ' \\left[ $1 \\right] ')
+		.replaceAll(/(?<!\\[A-z]+)\[([^[\]]*)\]/g, ' \\left[ $1 \\right] ')
 		.replaceAll('\\{', ' \\left\\{ ')
 		.replaceAll('\\}', ' \\right\\} ');
 	let defaultColorHex = '';
@@ -53,6 +53,7 @@ const makeTeXCode = (texCode, delimiters = ['\\[', '\\]']) => {
 		`\\newcommand{\\arccsc}[1]{\\operatorname{Arccsc}\\left(#1\\right)}\n` +
 		`\\newcommand{\\arcsec}[1]{\\operatorname{Arcsec}\\left(#1\\right)}\n` +
 		`\\newcommand{\\arccot}[1]{\\operatorname{Arccot}\\left(#1\\right)}\n` +
+		`\\renewcommand{\\bmod}[1]{\\operatorname{mod}\\left(#1\\right)}\n` +
 		`\\renewcommand{\\Re}[1]{\u211c\\mathfrak{e}\\left(#1\\right)}\n` +
 		`\\renewcommand{\\Im}[1]{\u2111\\mathfrak{m}\\left(#1\\right)}\n` +
 		"\\renewcommand{\\log}{\\@ifnextchar_{\\log@sub}{\\log@nosub}}\n" +
