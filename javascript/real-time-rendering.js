@@ -9,6 +9,8 @@ const makeTeXCode = (texCode, delimiters = ['\\[', '\\]']) => {
 		.replaceAll('$', ' \\$ ')
 		.replaceAll(/(?<!\\)\(/g, ' \\left( ')
 		.replaceAll(/(?<!\\)\)/g, ' \\right) ')
+		.replaceAll(/(\\[A-z]\{)?(.*)(\})?\s*(\+|-|\*)\s*(\\[A-z]\{)?(.*)(\})?/g, ' $1 $2 $3 \\mathop{$4} $5 $6 $7 ')
+		.replaceAll(/(\\[A-z]\{)?(.*)(\})?\s*(\\times|\\div|\\to)(?![A-Za-z])\s*(\\[A-z]\{)?(.*)(\})?/g, ' $1 $2 $3 \\mathop{$4} $5 $6 $7 ')
 		.replaceAll('\\[', ' [ ')
 		.replaceAll('\\]', ' ] ')
 		.replaceAll(/(?<!\\[A-z]+)\[([^[\]]*)\]/g, ' \\left[ $1 \\right] ')
@@ -34,6 +36,7 @@ const makeTeXCode = (texCode, delimiters = ['\\[', '\\]']) => {
 		`\\newcommand{\\undefined}{\\text{Undefined}}\n` +
 		`\\newcommand{\\nullchar}{\u00AD}\n` +
 		`\\newcommand{\\comment}[1]{\\quad\\gray{\\left(\\text{#1}\\right)}}\n` +
+		`\\newcommand{\\title}[1]{\\vphantom{\\frac{1}{2}}\\large\\text{\\quad\\quad #1}}\n` +
 		`\\newcommand{\\conclude}{\\quad\\blacksquare}\n` +
 		`\\renewcommand{\\sin}[1]{\\operatorname{sin}\\left(#1\\right)}\n` +
 		`\\renewcommand{\\cos}[1]{\\operatorname{cos}\\left(#1\\right)}\n` +
