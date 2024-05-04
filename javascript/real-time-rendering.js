@@ -9,8 +9,8 @@ const makeTeXCode = (texCode, delimiters = ['\\[', '\\]']) => {
 		.replaceAll('$', ' \\$ ')
 		.replaceAll(/(?<!\\)\(/g, ' \\left( ')
 		.replaceAll(/(?<!\\)\)/g, ' \\right) ')
-		.replaceAll(/(\\[A-z]\{)?(.*)(\})?\s*(\+|-|\*)\s*(\\[A-z]\{)?(.*)(\})?/g, ' $1 $2 $3 \\mathop{$4} $5 $6 $7 ')
-		.replaceAll(/(\\[A-z]\{)?(.*)(\})?\s*(\\times|\\div|\\to)(?![A-Za-z])\s*(\\[A-z]\{)?(.*)(\})?/g, ' $1 $2 $3 \\mathop{$4} $5 $6 $7 ')
+		.replaceAll(/(\\[A-z]\{)?(.*)(\})?\s*(\+|-|\*|=)\s*(\\[A-z]\{)?(.*)(\})?/g, ' $1 $2 $3 \\mathop{$4} $5 $6 $7 ')
+		.replaceAll(/(\\[A-z]\{)?(.*)(\})?\s*(\\times|\\div|\\to|\\ne|\\neq)(?![A-Za-z])\s*(\\[A-z]\{)?(.*)(\})?/g, ' $1 $2 $3 \\mathop{$4} $5 $6 $7 ')
 		.replaceAll('\\[', ' [ ')
 		.replaceAll('\\]', ' ] ')
 		.replaceAll(/(?<!\\[A-z]+)\[([^[\]]*)\]/g, ' \\left[ $1 \\right] ')
@@ -73,6 +73,20 @@ const makeTeXCode = (texCode, delimiters = ['\\[', '\\]']) => {
 		"\\newcommand{\\mode}[1]{\\operatorname{mode}\\left(\\mathbb{#1}\\right)}\n" +
 		"\\newcommand{\\e}{\\mathrm{e}}\n" +
 		"\\newcommand{\\iu}{\\mathrm{i}}\n" +
+		"\\newcommand{\\ju}{\\mathrm{j}}\n" +
+		"\\newcommand{\\k}{\\mathrm{k}}\n" +
+		"\\newcommand{\\l}{\\mathrm{l}}\n" +
+		"\\newcommand{\\m}{\\mathrm{m}}\n" +
+		"\\newcommand{\\il}{\\mathrm{il}}\n" +
+		"\\newcommand{\\jl}{\\mathrm{jl}}\n" +
+		"\\newcommand{\\kl}{\\mathrm{kl}}\n" +
+		"\\newcommand{\\im}{\\mathrm{im}}\n" +
+		"\\newcommand{\\jm}{\\mathrm{jm}}\n" +
+		"\\newcommand{\\km}{\\mathrm{km}}\n" +
+		"\\newcommand{\\lm}{\\mathrm{lm}}\n" +
+		"\\newcommand{\\ilm}{\\mathrm{ilm}}\n" +
+		"\\newcommand{\\jlm}{\\mathrm{jlm}}\n" +
+		"\\newcommand{\\klm}{\\mathrm{klm}}\n" +
 		"\\newcommand{\\dspace}{~~}\n" +
 		(condition ? '' : `\\begin{align*}\n`) +
 		`${value}\n` +
