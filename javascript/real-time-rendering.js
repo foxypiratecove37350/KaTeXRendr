@@ -7,15 +7,15 @@ const makeTeXCode = (texCode, delimiters = ['\\[', '\\]']) => {
 		.trim()
 		.replaceAll('\n', ' \\\\\n')
 		.replaceAll('$', ' \\$ ')
+		.replaceAll('\\{', ' \\left\\{ ')
+		.replaceAll('\\}', ' \\right\\} ')
 		.replaceAll(/(?<!\\)\(/g, ' \\left( ')
 		.replaceAll(/(?<!\\)\)/g, ' \\right) ')
-		.replaceAll(/(\\[A-z]\{)?(.*)(\})?\s*(\+|-|\*|=)\s*(\\[A-z]\{)?(.*)(\})?/g, ' $1 $2 $3 \\mathop{$4} $5 $6 $7 ')
-		.replaceAll(/(\\[A-z]\{)?(.*)(\})?\s*(\\times|\\div|\\to|\\ne|\\neq)(?![A-Za-z])\s*(\\[A-z]\{)?(.*)(\})?/g, ' $1 $2 $3 \\mathop{$4} $5 $6 $7 ')
+		.replaceAll(/(\\[A-Za-z]\{)?(\\|[A-Za-z]|\{)(\})?\s*(\+|-|\*|=)\s*(\\[A-Za-z]\{)?(\\|[A-Za-z]|\{)(\})?/g, '$1$2$3 \\mathop{$4} $5$6$7')
+		.replaceAll(/(\\[A-Za-z]\{)?(\\|[A-Za-z]|\{)(\})?\s*(\\times|\\div|\\to|\\ne|\\neq|\\approx)(?![A-Za-z])\s*(\\[A-Za-z]\{)?(\\|[A-Za-z]|\{)(\})?/g, '$1$2$3 \\mathop{$4} $5$6$7')
 		.replaceAll('\\[', ' [ ')
 		.replaceAll('\\]', ' ] ')
-		.replaceAll(/(?<!\\[A-z]+)\[([^[\]]*)\]/g, ' \\left[ $1 \\right] ')
-		.replaceAll('\\{', ' \\left\\{ ')
-		.replaceAll('\\}', ' \\right\\} ');
+		.replaceAll(/(?<!\\[A-Za-z]+)\[([^[\]]*)\]/g, ' \\left[ $1 \\right] ');
 	let defaultColorHex = '';
 	const defaultColor = window.getComputedStyle(kaTeXOutput)
 		.color
@@ -87,6 +87,54 @@ const makeTeXCode = (texCode, delimiters = ['\\[', '\\]']) => {
 		"\\newcommand{\\ilm}{\\mathrm{ilm}}\n" +
 		"\\newcommand{\\jlm}{\\mathrm{jlm}}\n" +
 		"\\newcommand{\\klm}{\\mathrm{klm}}\n" +
+		"\\newcommand{\\n}{\\mathrm{n}}\n" +
+		"\\newcommand{\\niu}{\\mathrm{ni}}\n" +
+		"\\newcommand{\\nj}{\\mathrm{nj}}\n" +
+		"\\newcommand{\\nk}{\\mathrm{nk}}\n" +
+		"\\newcommand{\\nl}{\\mathrm{nl}}\n" +
+		"\\newcommand{\\nm}{\\mathrm{nm}}\n" +
+		"\\newcommand{\\nil}{\\mathrm{nil}}\n" +
+		"\\newcommand{\\njl}{\\mathrm{njl}}\n" +
+		"\\newcommand{\\nkl}{\\mathrm{nkl}}\n" +
+		"\\newcommand{\\nim}{\\mathrm{nim}}\n" +
+		"\\newcommand{\\njm}{\\mathrm{njm}}\n" +
+		"\\newcommand{\\nkm}{\\mathrm{nkm}}\n" +
+		"\\newcommand{\\nlm}{\\mathrm{nlm}}\n" +
+		"\\newcommand{\\nilm}{\\mathrm{nilm}}\n" +
+		"\\newcommand{\\njlm}{\\mathrm{njlm}}\n" +
+		"\\newcommand{\\nklm}{\\mathrm{nklm}}\n" +
+		"\\newcommand{\\ou}{\\mathrm{o}}\n" +
+		"\\newcommand{\\oi}{\\mathrm{oi}}\n" +
+		"\\newcommand{\\oj}{\\mathrm{oj}}\n" +
+		"\\newcommand{\\ok}{\\mathrm{ok}}\n" +
+		"\\newcommand{\\ol}{\\mathrm{ol}}\n" +
+		"\\newcommand{\\om}{\\mathrm{om}}\n" +
+		"\\newcommand{\\oil}{\\mathrm{oil}}\n" +
+		"\\newcommand{\\ojl}{\\mathrm{ojl}}\n" +
+		"\\newcommand{\\okl}{\\mathrm{okl}}\n" +
+		"\\newcommand{\\oim}{\\mathrm{oim}}\n" +
+		"\\newcommand{\\ojm}{\\mathrm{ojm}}\n" +
+		"\\newcommand{\\okm}{\\mathrm{okm}}\n" +
+		"\\newcommand{\\olm}{\\mathrm{olm}}\n" +
+		"\\newcommand{\\oilm}{\\mathrm{oilm}}\n" +
+		"\\newcommand{\\ojlm}{\\mathrm{ojlm}}\n" +
+		"\\newcommand{\\oklm}{\\mathrm{oklm}}\n" +
+		"\\newcommand{\\on}{\\mathrm{on}}\n" +
+		"\\newcommand{\\oni}{\\mathrm{oni}}\n" +
+		"\\newcommand{\\onj}{\\mathrm{onj}}\n" +
+		"\\newcommand{\\onk}{\\mathrm{onk}}\n" +
+		"\\newcommand{\\onl}{\\mathrm{onl}}\n" +
+		"\\newcommand{\\onm}{\\mathrm{onm}}\n" +
+		"\\newcommand{\\onil}{\\mathrm{onil}}\n" +
+		"\\newcommand{\\onjl}{\\mathrm{onjl}}\n" +
+		"\\newcommand{\\onkl}{\\mathrm{onkl}}\n" +
+		"\\newcommand{\\onim}{\\mathrm{onim}}\n" +
+		"\\newcommand{\\onjm}{\\mathrm{onjm}}\n" +
+		"\\newcommand{\\onkm}{\\mathrm{onkm}}\n" +
+		"\\newcommand{\\onlm}{\\mathrm{onlm}}\n" +
+		"\\newcommand{\\onilm}{\\mathrm{onilm}}\n" +
+		"\\newcommand{\\onjlm}{\\mathrm{onjlm}}\n" +
+		"\\newcommand{\\onklm}{\\mathrm{onklm}}\n" +
 		"\\newcommand{\\dspace}{~~}\n" +
 		(condition ? '' : `\\begin{align*}\n`) +
 		`${value}\n` +
@@ -166,4 +214,4 @@ kaTeXTextarea.addEventListener('copy', (e) => {
 	}
 });
 
-document.addEventListener('loaded', (e) => { render(); });
+document.addEventListener('DOMContentLoaded', (e) => { render(); });
